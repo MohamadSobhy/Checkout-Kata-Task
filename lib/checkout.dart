@@ -18,15 +18,15 @@ class Checkout {
     /// Sorting the pricing rules list by the order of the pricing rule type.
     /// This will help to apply the offers rules first on the scanned products list.
     pricingRules.sort((a, b) => a.type.order.compareTo(b.type.order));
-
-    /// Calculate the total price of the scanned products based on the pricing rules
-    /// Each time a new product is scanned.
-    print('Total Checkout: ${calculateTotalCheckoutPrice()}');
   }
 
   /// A method to scan a product and add it to the products map.
   void scan(String productCode) {
     _products.update(productCode, (value) => value + 1, ifAbsent: () => 1);
+
+    /// Calculate the total price of the scanned products based on the pricing rules
+    /// Each time a new product is scanned.
+    print('Total Checkout: ${calculateTotalCheckoutPrice()}');
   }
 
   /// A method to calculate the total price of the scanned products based on the pricing rules.
