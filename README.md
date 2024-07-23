@@ -2,7 +2,7 @@ A sample command-line application with an entrypoint in `bin/`, library code
 in `lib/`, and example unit test in `test/`.
 
 
-Task Plan:
+## Task Plan:
 
 - Will create an enum to represent the type of each pricing rule.
 
@@ -35,3 +35,13 @@ Task Plan:
 - [Individual Rule]: for this rule we will multiply the total quantity by the product price to get the total price of that product and then add it to the total price. Then we should set the quantity of that prduct to be 0.
 
 - At the end we should print the total price and do the calculation each time a new product is scanned.
+
+## How to run the project:
+
+- Download and install the [Dart SDK](https://dart.dev/get-dart) to setup the dart environtment.
+- Download [VS Code](https://code.visualstudio.com/) Editor or any other application that supports [Dart] projects.
+- Clone and open the project in [VS Code].
+- To run the project you have to ways:
+    - Using GUI: click on the `Run` tap and then select either `Start Debugging` of `Run without Debugging` option and VS Code will run the app and shows the result in the `Debug Consule` tab.
+    - Using Terminal: open the Terminal window in VS Code or the default terminal wimdow in your OS and open the project directory in the terminal and execute the this command `dart bin/fluro_task.dart`.
+
