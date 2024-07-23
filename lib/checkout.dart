@@ -22,11 +22,16 @@ class Checkout {
 
   /// A method to scan a product and add it to the products map.
   void scan(String productCode) {
+    print('----------------------------------------------------------------');
+    print("Scanning product: $productCode");
+
     _products.update(productCode, (value) => value + 1, ifAbsent: () => 1);
+
+    print('Products: $_products');
 
     /// Calculate the total price of the scanned products based on the pricing rules
     /// Each time a new product is scanned.
-    print('Total Checkout: ${calculateTotalCheckoutPrice()}');
+    print('Total Checkout: £${calculateTotalCheckoutPrice()}');
   }
 
   /// A method to calculate the total price of the scanned products based on the pricing rules.
@@ -52,8 +57,6 @@ class Checkout {
 
         /// Get the total quantity of the product code in the scanned products list.
         int totalQuantity = totalProducts[rule.productCodes.first] ?? 0;
-
-        print('Before: $totalProducts');
 
         /// Apply the pricing rule logic based on the type of the rule.
         switch (rule.type) {
@@ -124,8 +127,6 @@ class Checkout {
             totalProducts[rule.productCodes.first] = 0;
             break;
         }
-
-        print('After: $totalProducts');
       }
     }
 
