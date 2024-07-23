@@ -25,7 +25,11 @@ class Checkout {
     print('----------------------------------------------------------------');
     print("Scanning product: $productCode");
 
-    _products.update(productCode, (value) => value + 1, ifAbsent: () => 1);
+    _products.update(
+      productCode.toUpperCase(),
+      (value) => value + 1,
+      ifAbsent: () => 1,
+    );
 
     print('Products: $_products');
 
